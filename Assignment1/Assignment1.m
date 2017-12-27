@@ -9,9 +9,9 @@
 
 % ---------------- Step 1 ------------------------
 % Read in an image, get information
-% type help imread for more information 
+% type help imread for more information
 
-InputImage = 'NY.bmp'; 
+InputImage = 'IDPicture.bmp'; 
 %OutputImage1 = 'IDPicture_bw.bmp';
 
 C1 = imread(InputImage);
@@ -212,9 +212,9 @@ Gband1 = C1(:, :, 2);
 Bband1 = C1(:, :, 3);
 
 c = 0.15;
-Rband2 = c*log(1+double(Rband1));
-Bband2 = c*log(1+double(Bband1));
-Gband2 = c*log(1+double(Gband1));
+Rband2 = c.*log(1+double(Rband1));
+Bband2 = c.*log(1+double(Bband1));
+Gband2 = c.*log(1+double(Gband1));
 
 LogImage= cat(3, Rband2, Gband2, Bband2);
 
